@@ -22,7 +22,14 @@ const jobBadges = {
   },
 };
 
-const getJobBadge = (job: any) => {
+type Job = {
+  id: string;
+  title: string;
+  deadline: string;
+  isNew?: boolean;
+};
+
+const getJobBadge = (job: Job) => {
   const today = new Date();
   const deadline = new Date(job.deadline);
 
