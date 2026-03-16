@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 24% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 12%;
+
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 24% 12%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 150 60% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 92%;
+    --input: 210 20% 92%;
+    --ring: 210 100% 45%;
+
+    --radius: 16px;
+
+    --card-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+    --card-glow: inset 0 0 0 1px hsla(210, 20%, 90%, 0.5);
+
+    --campaign-gradient: linear-gradient(90deg, hsl(150, 60%, 35%), hsl(150, 60%, 45%));
+    --easing: cubic-bezier(0.2, 0.0, 0, 1.0);
+  }
+
+  .dark {
+    --background: 210 24% 8%;
+    --foreground: 210 20% 96%;
+    --card: 210 24% 12%;
+    --card-foreground: 210 20% 96%;
+    --popover: 210 24% 12%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 16%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 210 20% 16%;
+    --muted-foreground: 210 10% 55%;
+    --accent: 150 60% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 210 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Hind Siliguri', sans-serif;
+  }
+}
+
+@layer utilities {
+  .card-surface {
+    box-shadow: var(--card-shadow);
+    background: hsl(var(--card));
+  }
+
+  .card-glow {
+    box-shadow: var(--card-glow), var(--card-shadow);
+  }
+
+  .progress-fill {
+    background: var(--campaign-gradient);
+  }
+
+  .text-caption {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .text-body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .text-subhead {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .text-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .text-display {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+}
