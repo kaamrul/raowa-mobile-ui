@@ -27,6 +27,13 @@ const JobApplyPage = lazy(() => import("./pages/JobApplyPage"));
 const JobDetailsPage = lazy(() => import("./pages/JobDetailsPage"));
 const JobsPage = lazy(() => import("./pages/JobsPage"));
 
+const PromotionPage = lazy(() => import("./pages/PromotionPage"));
+const PromotionPlansPage = lazy(() => import("./pages/PromotionPlansPage"));
+const PromotionMyAdsPage = lazy(() => import("./pages/PromotionMyAdsPage"));
+const PromotionMyPlanPage = lazy(() => import("./pages/PromotionMyPlanPage"));
+const PromotionSubscribePage = lazy(() => import("./pages/PromotionSubscribePage"));
+const PromotionCreateAdPage = lazy(() => import("./pages/PromotionCreateAdPage"));
+
 const queryClient = new QueryClient();
 
 const PageLoader = () => (
@@ -63,6 +70,14 @@ const App = () => (
               <Route path="/jobs" element={<JobsPage />} />
               <Route path="/jobs/:id" element={<JobDetailsPage />} />
               <Route path="/jobs/apply/:id" element={<JobApplyPage />} />
+
+              <Route path="/promotion" element={<PromotionPage />} />
+              <Route path="/promotion/plans" element={<PromotionPlansPage />} />
+              <Route path="/promotion/my-ads" element={<PromotionMyAdsPage />} />
+              <Route path="/promotion/my-plan" element={<PromotionMyPlanPage />} />
+              <Route path="/promotion/subscribe/:planId" element={<PromotionSubscribePage />} />
+              <Route path="/promotion/create-ad" element={<PromotionCreateAdPage />} />
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

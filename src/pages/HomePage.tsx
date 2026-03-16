@@ -20,9 +20,9 @@ import {
   campaigns,
   obituaries,
   jobAlerts,
-  promotionPlans,
   committees,
 } from "@/data/mockData";
+import { promotionPlans } from "@/data/promotion";
 import CampaignProgress from "@/components/CampaignProgress";
 
 const sectionTitleClass = "text-[18px] font-semibold text-[#111827]";
